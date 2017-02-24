@@ -1,0 +1,49 @@
+<div class="sidebar">
+  <img class="avatar" src="{{ "/assets/image/avatar.jpg" | prepend: site.baseurl }}" alt="{{ site.author }}">
+  <div class="col-box-title name myFont css2dcc4b9955748">{{ site.author }}</div>
+  <p class="myFont css2dcc4b9955748">{{ site.profile }}</p>
+  <p class="contact">
+    {% if site.github_username %}
+    <a href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+    {% endif %}
+    {% if site.weibo_username %}
+    <a href="https://weibo.com/{{ site.weibo_username }}" target="_blank"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+    {% endif %}
+    {% if site.twitter_username %}
+    <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    {% endif %}
+    {% if site.email %}
+    <a href="mailto:{{ site.email }}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    {% endif %}
+  </p>
+
+  <div class="col-box-title myFont css2dcc4b9955748">最新文章</div>
+  <ul class="post-list">
+<!--     <li>Theme By <a href="http://www.jianshu.com/u/8694930d2e61">Magic Fan</a></li> -->
+    {% for post in site.posts limit:5 %}
+      <li><a class="post-link" href="{{ post.url | prepend: site.baseurl }}" target="_blank">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <div class="col-box-title myFont css2dcc4b9955748">标签</div>
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+   <span class="site-tag">
+      <a href="/pages/tags.html#{{ tag | first | slugify }}/"
+          style="font-size: {{ tag | last | size  |  times: 4 | plus: 90  }}%">
+              {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+      </a>
+  </span>
+  {% endfor %}
+
+  <div class="col-box-title myFont css2dcc4b9955748">分类</div>
+  {% assign categories = site.categories | sort %}
+  {% for category in categories %}
+   <span class="site-tag">
+      <a href="/pages/category.html#{{ category | first | slugify }}/"
+          style="font-size: {{ category | last | size  |  times: 4 | plus: 90  }}%">
+              {{ category[0] | replace:'-', ' ' }} ({{ category | last | size }})
+      </a>
+  </span>
+  {% endfor %}
+</div>

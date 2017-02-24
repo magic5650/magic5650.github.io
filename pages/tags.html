@@ -1,0 +1,27 @@
+---
+layout: default
+title: 文章标签
+permalink: /pages/tags.html
+---
+<p class="content-inner-title myFont css2dcc4b9955748">标签列表</p>
+{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+ <span class="site-tag">
+    <a href="/pages/tags.html#{{ tag | first | slugify }}/">
+        {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    </a>
+</span>
+{% endfor %}
+
+<div>
+	<ul class="post-list">
+		{% for tag in site.tags %}
+			<h3 class="category" id="{{tag[0]}}" >{{tag[0]}}</h3>
+			<ul>
+				{% for post in tag[1] %}
+				<li><span>{{ post.date | date: "%b %d, %Y" }}</span>&raquo <a href="{{ site.baseurl}}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
+				{% endfor %}	
+			</ul>
+		{% endfor %}
+	</ul>
+</div>	

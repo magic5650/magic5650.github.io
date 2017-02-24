@@ -1,0 +1,49 @@
+# Site settings
+title: 诗宁
+baseurl: ""
+sitetitle: 诗宁博客
+# timezone: TZ
+description: magic5650的个人博客网站。
+# author information
+email: magic5650@126.com
+author: Magic #yourname #magic范
+place: Guangzhou #杭州
+domain: yy.com #互联网
+company: 欢聚时代 #Jeeyoo
+position: Service Operations #业务运维
+school: bjtu.edu.cn #北京交通大学
+major: Computer Science&Technology #计算机科学与技术
+resume: https://magic5650.github.io/blog/home
+profile: You will be the best. #
+twitter_username: zyx19936688
+weibo_username:  magic5650
+github_username:  magic5650
+
+# Comment Service (Disqus or 多说)
+#  choose one and un-comment the line to active it
+disqus_shortname: magic5650   
+# get one: https://disqus.com/admin/signup/
+# duoshuo_shortname: clark-zhao  
+# get one: http://duoshuo.com/create-site/
+
+# blog settings
+# excerpt_separator: <!–excerpt–> # 摘要分割字符串
+permalink: /archivers/:title
+gems:
+ - jekyll-paginate
+ - jekyll-gist
+ - jemoji
+
+repository: magic5650/blog
+gist:
+  noscript: false
+# Build settings
+paginate: 3
+paginate_path: "/page:num"
+
+highlighter: rouge
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge

@@ -1,0 +1,104 @@
+<!--   <script type="text/javascript">
+  window.onload = function() {
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: "{{ site.url }}",
+        width: 120,
+        height: 120,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+    qrcode.makeCode("{{ site.url }}{{ page.url }}");
+    console.log("qrcode.makeCode");
+    var qrcodediv = document.getElementById("qrcode");
+    var wechat = document.getElementById("wechat");
+    function qrShow() {
+      console.log("click wechat");
+      if (qrcodediv.classList.contains("show")) {
+          qrcodediv.classList.remove("show");
+          qrcodediv.classList.add("hide");
+      } else {
+          qrcodediv.classList.remove("hide");
+          qrcodediv.classList.add("show");
+      }
+    }
+    wechat.addEventListener('click', qrShow, false);
+  }
+</script> -->
+<!-- <span id="share">
+  <div id="qrcode2" class="hide"></div>
+  <a id="wechat" class="social-share-icon icon-wechat" title="分享到 微信" data-wechat-url="{{ site.url }}{{ page.url }}" href="javascript:void(0);" tabindex="-1">
+    <div class="wechat-qrcode">
+      <h4>微信扫一扫</h4>
+      <div id="qrcode" class="qrcode"></div>
+      <div class="help">
+        <p>微信扫一扫，右上角分享</p>
+      </div>
+    </div>
+  </a>
+
+  <a id="weibo" class="social-share-icon icon-weibo" title="分享到 新浪微博" href="http://service.weibo.com/share/share.php?url={{ site.url }}{{ page.url }}&amp;title={{ page.title }} | {{ site.title }} +-+作者: @{{ site.weibo_username }}&amp;pic=pics={{ site.url }}/assets/image/avatar.jpg&amp;appkey=2868579043" target="_blank"></a>
+
+  <a id="tecent" class="social-share-icon icon-qq" title="分享给 QQ好友" href="http://connect.qq.com/widget/shareqq/index.html?url={{ site.url }}{{ page.url }}&amp;title={{ page.title }} | {{ site.title }}&amp;source=magic5650&amp;pics={{ site.url }}/assets/image/avatar.jpg" target="_blank"></a>
+
+  <a id="qzone" class="social-share-icon icon-qzone" title="分享到 QQ空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url={{ site.url }}{{ page.url }}&amp;title={{ page.title }} | {{ site.title }}&amp;desc={{ page.description }}&amp;summary={% if page.description %}{{ page.description }}{% else %}{% endif %}&amp;site=magic5650" target="_blank"></a>
+
+  <a id="twitter" class="social-share-icon icon-twitter" title="Share to Twitter" href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&amp;text={{ page.title }} | {{ site.title }}&amp;via={{ site.twitter_username }}" target="_blank"></a>
+</span> -->
+
+<div class="social-share" data-wechat-qrcode-title="微信扫一扫" data-wechat-qrcode-helper="微信扫一扫,右上角分享" data-sites="wechat,qzone,qq,weibo,douban"></div>
+<!-- https://github.com/overtrue/share.js-->
+{% if page.nocomments %}
+{% else %}
+{% if site.disqus_shortname %}
+<div class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = '{{ site.disqus_shortname }}'; // required: replace example with your forum shortname
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+</div>
+{% endif %}
+{% if site.duoshuo_shortname %}
+<div class="post-comments">
+<!-- 多说分享代码 start -->
+    <div class="ds-share" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-images="https://avatars0.githubusercontent.com/u/17525377?v=3&s=460" data-content="——Clark Zhao的博客" data-url="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        
+        <li>分享到：</li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+        <li><a class="ds-qq" href="javascript:void(0);" data-service="qq">QQ</a> </li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+ </div>
+    <!-- 多说分享代码 end -->
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"></div>
+    <!-- 多说评论框 end -->
+    
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"{{ site.duoshuo_shortname }}"};
+      (function() {
+      	var ds = document.createElement('script');
+      	ds.type = 'text/javascript';ds.async = true;
+      	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      	ds.charset = 'UTF-8';
+      	(document.getElementsByTagName('head')[0] 
+      	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+{% endif %}
+{% endif %}

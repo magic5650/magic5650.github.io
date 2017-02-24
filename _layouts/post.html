@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+	<div class="col-box-title myFont css2dcc4b9955748">标签:&nbsp&nbsp
+	{% if page.tags.size > 0 %}
+		{% assign tags = page.tags | sort %}
+		{% for tag in tags %}
+		<span class="site-tag">
+		 	<a class="pjaxlink" href="/pages/tags.html#{{tag}}">{{ tag }}</a>      
+		</span>
+		{% endfor %}
+	{% endif %}
+	</div>
+<!-- 	{% assign tags = site.tags | sort %}
+{% for tag in tags %}
+ <span class="site-tag">
+    <a href="/tag/{{ tag | first | slugify }}/"
+        style="font-size: {{ tag | last | size  |  times: 4 | plus: 80  }}%">
+            {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+    </a>
+</span>
+{% endfor %} -->
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>
+  {% include comment.html %}
+
+</div>
