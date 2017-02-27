@@ -160,11 +160,13 @@ main {
   .pagination a {
     border: 1px solid #eee;
     color: #259;
-    margin: 0 10px; }
+    margin: 0 10px;
+    padding: 2px 4px; }
   .pagination span {
     border: 1px solid #eee;
     color: #222;
-    margin: 0 10px; }
+    margin: 0 10px;
+    padding: 2px 4px; }
 
 .footer-inner {
   font-size: 13px;

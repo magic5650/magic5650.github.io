@@ -63,7 +63,7 @@
             time1 = 0;
         });
 
-        $.getJSON("/blog/search/cb-search.json").done(function (data) {
+        $.getJSON("/search/cb-search.json").done(function (data) {
             if (data.code == 0) {
                 for (var index in data.data) {
                     var item = data.data[index];
@@ -77,7 +77,7 @@
                     afterSelect: function (item) {
 						$(".search-tool").css("display", "none");
                         show = false;
-                        window.location.href = "/blog" + (urls[names.indexOf(item)]);
+                        window.location.href = (urls[names.indexOf(item)]);
                         return item;
                     }
                 });
