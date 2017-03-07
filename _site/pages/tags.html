@@ -58,26 +58,87 @@
   <main class="clearfix">
     <div class="content">
       <div class="content-inner">
+<script type="text/javascript">
+$(document).ready(function(){
+  $("span.site-tag").click(function(){
+    var tag_id= $(this).attr("id");
+    $("span.site-tag").each(function(){
+        if ($(this).attr("id")!=tag_id)
+        {
+          $(this).removeClass("current");
+        }
+        else{
+          $(this).addClass("current");
+        }
+    })
+    $("ul.post-list").children("div").each(function(){
+      if ($(this).attr("id")!=tag_id)
+      {
+        $(this).hide();
+      }
+      else{
+        $(this).show();
+      }
+    })
+    $('html, body').animate({scrollTop:0}, 'fast');
+  });
+
+  $("ul.post-list").children("div").each(function(){
+    var tag_id= window.location.hash.substring(1);
+    if (tag_id!="")
+    {
+      if ($(this).attr("id")!=tag_id)
+      {
+        $(this).hide();
+      }
+      else{
+        $(this).show();
+        $("span.site-tag").each(function(){
+          if ($(this).attr("id")==tag_id)
+          {
+            $(this).addClass("current");
+          }
+        })
+      }
+    }
+    else
+    {
+      $("span.site-tag").each(function(){
+        if ($(this).attr("id")=="All")
+        {
+          $(this).addClass("current");
+        }
+      })
+    }
+  })
+  $('html, body').animate({scrollTop:0}, 'fast');
+});
+</script>
 <p class="content-inner-title myFont css2dcc4b9955748">标签列表</p>
-
-
- <span class="site-tag">
-    <a href="/pages/tags.html#android/">
-        android (2)
-    </a>
-</span>
-
- <span class="site-tag">
-    <a href="/pages/tags.html#seekbar/">
-        seekbar (1)
-    </a>
-</span>
-
-
+<div class="site-tag-main">
+  <span class="site-tag" id="All">
+    <a href="/pages/tags.html">All</a>
+  </span>
+  
+  
+   <span class="site-tag" id=android>
+      <a href="/pages/tags.html#android">
+          android (2)
+      </a>
+  </span>
+  
+   <span class="site-tag" id=seekbar>
+      <a href="/pages/tags.html#seekbar">
+          seekbar (1)
+      </a>
+  </span>
+  
+</div>
 <div>
 	<ul class="post-list">
 		
-			<h3 class="category" id="android" >android</h3>
+		<div id="android" class="tag-list">
+			<h3 class="tag" id="android" >android</h3>
 			<ul>
 				
 				<li><span>Feb 22, 2017</span>&raquo <a href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
@@ -85,13 +146,16 @@
 				<li><span>Feb 21, 2017</span>&raquo <a href="/archivers/Android-Seekbar-Style" target="_blank">Android Seekbar style</a></li>
 					
 			</ul>
+		</div>
 		
-			<h3 class="category" id="seekbar" >seekbar</h3>
+		<div id="seekbar" class="tag-list">
+			<h3 class="tag" id="seekbar" >seekbar</h3>
 			<ul>
 				
 				<li><span>Feb 22, 2017</span>&raquo <a href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
 					
 			</ul>
+		</div>
 		
 	</ul>
 </div>	
@@ -135,15 +199,15 @@
   <div class="col-box-title myFont css2dcc4b9955748">标签</div>
   
   
-   <span class="site-tag">
-      <a href="/pages/tags.html#android/"
+   <span class="site-tag" id=android>
+      <a href="/pages/tags.html#android"
           style="font-size: 98%">
               android (2)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/tags.html#seekbar/"
+   <span class="site-tag" id=seekbar>
+      <a href="/pages/tags.html#seekbar"
           style="font-size: 94%">
               seekbar (1)
       </a>
@@ -153,29 +217,33 @@
   <div class="col-box-title myFont css2dcc4b9955748">分类</div>
   
   
-   <span class="site-tag">
-      <a href="/pages/category.html#android/"
+   <span class="site-tag" id=Android>
+<!--       <a href="/pages/category.html#android" -->
+      <a href="/pages/category.html#Android"
           style="font-size: 98%">
               Android (2)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#bohu/"
+   <span class="site-tag" id=BoHu>
+<!--       <a href="/pages/category.html#bohu" -->
+      <a href="/pages/category.html#BoHu"
           style="font-size: 94%">
               BoHu (1)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#demo/"
+   <span class="site-tag" id=Demo>
+<!--       <a href="/pages/category.html#demo" -->
+      <a href="/pages/category.html#Demo"
           style="font-size: 94%">
               Demo (1)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#jekyll/"
+   <span class="site-tag" id=Jekyll>
+<!--       <a href="/pages/category.html#jekyll" -->
+      <a href="/pages/category.html#Jekyll"
           style="font-size: 94%">
               Jekyll (1)
       </a>
@@ -189,8 +257,9 @@
 			<ul>
 				<li><a href="/home" class="myFont css2dcc4b9955748">主页</a></li>
 				<li><a href="/index" class="myFont css2dcc4b9955748">博客</a></li>
+				<li><a href="/pages/archive.html" class="myFont css2dcc4b9955748">归档</a></li>
 				<li><a href="/about" class="myFont css2dcc4b9955748">关于</a></li>
-				<li><a href="javascript:scroll(0,0)" class="myFont css2dcc4b9955748">向上</a></li>
+<!-- 				<li><a href="javascript:scroll(0,0)" class="myFont css2dcc4b9955748">向上</a></li> -->
 			</ul>
 		</div>
 	</footer>

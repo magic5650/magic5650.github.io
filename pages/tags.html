@@ -3,25 +3,87 @@ layout: default
 title: 文章标签
 permalink: /pages/tags.html
 ---
-<p class="content-inner-title myFont css2dcc4b9955748">标签列表</p>
-{% assign tags = site.tags | sort %}
-{% for tag in tags %}
- <span class="site-tag">
-    <a href="/pages/tags.html#{{ tag | first | slugify }}/">
-        {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
-    </a>
-</span>
-{% endfor %}
+<script type="text/javascript">
+$(document).ready(function(){
+  $("span.site-tag").click(function(){
+    var tag_id= $(this).attr("id");
+    $("span.site-tag").each(function(){
+        if ($(this).attr("id")!=tag_id)
+        {
+          $(this).removeClass("current");
+        }
+        else{
+          $(this).addClass("current");
+        }
+    })
+    $("ul.post-list").children("div").each(function(){
+      if ($(this).attr("id")!=tag_id)
+      {
+        $(this).hide();
+      }
+      else{
+        $(this).show();
+      }
+    })
+    $('html, body').animate({scrollTop:0}, 'fast');
+  });
 
+  $("ul.post-list").children("div").each(function(){
+    var tag_id= window.location.hash.substring(1);
+    if (tag_id!="")
+    {
+      if ($(this).attr("id")!=tag_id)
+      {
+        $(this).hide();
+      }
+      else{
+        $(this).show();
+        $("span.site-tag").each(function(){
+          if ($(this).attr("id")==tag_id)
+          {
+            $(this).addClass("current");
+          }
+        })
+      }
+    }
+    else
+    {
+      $("span.site-tag").each(function(){
+        if ($(this).attr("id")=="All")
+        {
+          $(this).addClass("current");
+        }
+      })
+    }
+  })
+  $('html, body').animate({scrollTop:0}, 'fast');
+});
+</script>
+<p class="content-inner-title myFont css2dcc4b9955748">标签列表</p>
+<div class="site-tag-main">
+  <span class="site-tag" id="All">
+    <a href="/pages/tags.html">All</a>
+  </span>
+  {% assign tags = site.tags | sort %}
+  {% for tag in tags %}
+   <span class="site-tag" id={{ tag[0] }}>
+      <a href="/pages/tags.html#{{ tag | first }}">
+          {{ tag[0] | replace:'-', ' ' }} ({{ tag | last | size }})
+      </a>
+  </span>
+  {% endfor %}
+</div>
 <div>
 	<ul class="post-list">
 		{% for tag in site.tags %}
-			<h3 class="category" id="{{tag[0]}}" >{{tag[0]}}</h3>
+		<div id="{{tag[0]}}" class="tag-list">
+			<h3 class="tag" id="{{tag[0]}}" >{{tag[0]}}</h3>
 			<ul>
 				{% for post in tag[1] %}
 				<li><span>{{ post.date | date: "%b %d, %Y" }}</span>&raquo <a href="{{ site.baseurl}}{{ post.url }}" target="_blank">{{ post.title }}</a></li>
 				{% endfor %}	
 			</ul>
+		</div>
 		{% endfor %}
 	</ul>
 </div>	

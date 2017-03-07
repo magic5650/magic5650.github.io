@@ -58,74 +58,142 @@
   <main class="clearfix">
     <div class="content">
       <div class="content-inner">
+<script type="text/javascript">
+$(document).ready(function(){
+  $("span.site-tag").click(function(){
+	  var tag_id= $(this).attr("id");
+    $("span.site-tag").each(function(){
+        if ($(this).attr("id")!=tag_id)
+        {
+          $(this).removeClass("current");
+        }
+        else{
+          $(this).addClass("current");
+        }
+    })
+  	$("ul.post-list").children("div").each(function(){
+  		if ($(this).attr("id")!=tag_id)
+  		{
+  			$(this).hide();
+  		}
+  		else{
+  			$(this).show();
+  		}
+  	})
+    $('html, body').animate({scrollTop:0}, 'fast');
+  });
+
+  $("ul.post-list").children("div").each(function(){
+    var tag_id= window.location.hash.substring(1);
+    if (tag_id!="")
+    {
+      if ($(this).attr("id")!=tag_id)
+      {
+        $(this).hide();
+      }
+      else{
+        $(this).show();
+        $("span.site-tag").each(function(){
+          if ($(this).attr("id")==tag_id)
+          {
+            $(this).addClass("current");
+          }
+        })
+      }
+    }
+    else
+    {
+      $("span.site-tag").each(function(){
+        if ($(this).attr("id")=="All")
+        {
+          $(this).addClass("current");
+        }
+      })
+    }
+  })
+  $('html, body').animate({scrollTop:0}, 'fast');
+});
+</script>
 <p class="content-inner-title myFont css2dcc4b9955748">分类列表</p>
+<div class="site-tag-main">
+  <span class="site-tag" id="All">
+    <a href="/pages/category.html">All</a>
+  </span>
   
   
-   <span class="site-tag">
-      <a href="/pages/category.html#android/">
+   <span class="site-tag" id=Android>
+      <a href="/pages/category.html#Android">
             Android (2)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#bohu/">
+   <span class="site-tag" id=BoHu>
+      <a href="/pages/category.html#BoHu">
             BoHu (1)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#demo/">
+   <span class="site-tag" id=Demo>
+      <a href="/pages/category.html#Demo">
             Demo (1)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#jekyll/">
+   <span class="site-tag" id=Jekyll>
+      <a href="/pages/category.html#Jekyll">
             Jekyll (1)
       </a>
   </span>
   
+</div>
 <div>
   <ul class="post-list">
 	
 	
 	
 	
-	<h3 class="category" id="Android">ANDROID</h3>
-	<ul>
-	
-	<li><span>Feb 22, 2017</span> » <a href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
-	
-	<li><span>Feb 21, 2017</span> » <a href="/archivers/Android-Seekbar-Style" target="_blank">Android Seekbar style</a></li>
-	
-	</ul>
-	
-	
-	<h3 class="category" id="BoHu">BOHU</h3>
-	<ul>
-	
-	<li><span>Apr 23, 2016</span> » <a href="/archivers/Whats-Bohu" target="_blank">Whats BoHu?</a></li>
-	
-	</ul>
+	<div id="Android" class="category-list">
+		<h3 class="category" id="Android">ANDROID</h3>
+		<ul>
+		
+		<li><span>Feb 22, 2017</span> » <a href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
+		
+		<li><span>Feb 21, 2017</span> » <a href="/archivers/Android-Seekbar-Style" target="_blank">Android Seekbar style</a></li>
+		
+		</ul>
+	</div>
 	
 	
-	<h3 class="category" id="Demo">DEMO</h3>
-	<ul>
+	<div id="BoHu" class="category-list">
+		<h3 class="category" id="BoHu">BOHU</h3>
+		<ul>
+		
+		<li><span>Apr 23, 2016</span> » <a href="/archivers/Whats-Bohu" target="_blank">Whats BoHu?</a></li>
+		
+		</ul>
+	</div>
 	
-	<li><span>Apr 22, 2016</span> » <a href="/archivers/Example-content" target="_blank">Example content</a></li>
 	
-	</ul>
+	<div id="Demo" class="category-list">
+		<h3 class="category" id="Demo">DEMO</h3>
+		<ul>
+		
+		<li><span>Apr 22, 2016</span> » <a href="/archivers/Example-content" target="_blank">Example content</a></li>
+		
+		</ul>
+	</div>
 	
 	
-	<h3 class="category" id="Jekyll">JEKYLL</h3>
-	<ul>
-	
-	<li><span>Apr 23, 2016</span> » <a href="/archivers/Whats-Jekyll" target="_blank">Whats Jekyll?</a></li>
-	
-	</ul>
+	<div id="Jekyll" class="category-list">
+		<h3 class="category" id="Jekyll">JEKYLL</h3>
+		<ul>
+		
+		<li><span>Apr 23, 2016</span> » <a href="/archivers/Whats-Jekyll" target="_blank">Whats Jekyll?</a></li>
+		
+		</ul>
+	</div>
 	
   </ul>
- 
 </div>
 	</div>
 </div>
@@ -167,15 +235,15 @@
   <div class="col-box-title myFont css2dcc4b9955748">标签</div>
   
   
-   <span class="site-tag">
-      <a href="/pages/tags.html#android/"
+   <span class="site-tag" id=android>
+      <a href="/pages/tags.html#android"
           style="font-size: 98%">
               android (2)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/tags.html#seekbar/"
+   <span class="site-tag" id=seekbar>
+      <a href="/pages/tags.html#seekbar"
           style="font-size: 94%">
               seekbar (1)
       </a>
@@ -185,29 +253,33 @@
   <div class="col-box-title myFont css2dcc4b9955748">分类</div>
   
   
-   <span class="site-tag">
-      <a href="/pages/category.html#android/"
+   <span class="site-tag" id=Android>
+<!--       <a href="/pages/category.html#android" -->
+      <a href="/pages/category.html#Android"
           style="font-size: 98%">
               Android (2)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#bohu/"
+   <span class="site-tag" id=BoHu>
+<!--       <a href="/pages/category.html#bohu" -->
+      <a href="/pages/category.html#BoHu"
           style="font-size: 94%">
               BoHu (1)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#demo/"
+   <span class="site-tag" id=Demo>
+<!--       <a href="/pages/category.html#demo" -->
+      <a href="/pages/category.html#Demo"
           style="font-size: 94%">
               Demo (1)
       </a>
   </span>
   
-   <span class="site-tag">
-      <a href="/pages/category.html#jekyll/"
+   <span class="site-tag" id=Jekyll>
+<!--       <a href="/pages/category.html#jekyll" -->
+      <a href="/pages/category.html#Jekyll"
           style="font-size: 94%">
               Jekyll (1)
       </a>
@@ -221,8 +293,9 @@
 			<ul>
 				<li><a href="/home" class="myFont css2dcc4b9955748">主页</a></li>
 				<li><a href="/index" class="myFont css2dcc4b9955748">博客</a></li>
+				<li><a href="/pages/archive.html" class="myFont css2dcc4b9955748">归档</a></li>
 				<li><a href="/about" class="myFont css2dcc4b9955748">关于</a></li>
-				<li><a href="javascript:scroll(0,0)" class="myFont css2dcc4b9955748">向上</a></li>
+<!-- 				<li><a href="javascript:scroll(0,0)" class="myFont css2dcc4b9955748">向上</a></li> -->
 			</ul>
 		</div>
 	</footer>

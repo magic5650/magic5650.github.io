@@ -30,11 +30,12 @@ disqus_shortname: magic5650
 # excerpt_separator: <!–excerpt–> # 摘要分割字符串
 permalink: /archivers/:title
 gems:
+ # - jekyll-archives
  - jekyll-paginate
  - jekyll-gist
  - jemoji
 
-repository: magic5650/blog
+repository: magic5650/magic5650.github.io
 gist:
   noscript: false
 # Build settings
@@ -47,3 +48,13 @@ markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+# jekyll-archives:
+  # enabled: all
+  # layout: 'archive'
+  # permalinks:
+  #   year: '/:year/'
+  #   month: '/:year/:month/'
+  #   day: '/:year/:month/:day/'
+  #   tag: '/tag/:name/'
+  #   category: '/category/:name/'
