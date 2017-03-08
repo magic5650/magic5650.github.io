@@ -61,7 +61,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
   $("span.site-tag").click(function(){
-	  var tag_id= $(this).attr("id");
+    var tag_id= $(this).attr("id");
     $("span.site-tag").each(function(){
         if ($(this).attr("id")!=tag_id)
         {
@@ -71,15 +71,15 @@ $(document).ready(function(){
           $(this).addClass("current");
         }
     })
-  	$("ul.post-list").children("div").each(function(){
-  		if ($(this).attr("id")!=tag_id)
-  		{
-  			$(this).hide();
-  		}
-  		else{
-  			$(this).show();
-  		}
-  	})
+    $("ul.post-list").children("div").each(function(){
+      if ($(this).attr("id")!=tag_id)
+      {
+        $(this).hide();
+      }
+      else{
+        $(this).show();
+      }
+    })
     $('html, body').animate({scrollTop:0}, 'fast');
   });
 
@@ -146,9 +146,11 @@ $(document).ready(function(){
   </span>
   
 </div>
+
 <div>
   <ul class="post-list">
 	
+  
 	
 	
 	
@@ -216,21 +218,22 @@ $(document).ready(function(){
     
   </p>
 
-  <div class="col-box-title myFont css2dcc4b9955748">最新文章</div>
-  <ul class="post-list">
-<!--     <li>Theme By <a href="http://www.jianshu.com/u/8694930d2e61">Magic Fan</a></li> -->
-    
-      <li><a class="post-link" href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
-    
-      <li><a class="post-link" href="/archivers/Android-Seekbar-Style" target="_blank">Android Seekbar style</a></li>
-    
-      <li><a class="post-link" href="/archivers/Whats-Jekyll" target="_blank">Whats Jekyll?</a></li>
-    
-      <li><a class="post-link" href="/archivers/Whats-Bohu" target="_blank">Whats BoHu?</a></li>
-    
-      <li><a class="post-link" href="/archivers/Example-content" target="_blank">Example content</a></li>
-    
-  </ul>
+  
+    <div class="col-box-title myFont css2dcc4b9955748">最新文章</div>
+    <ul class="post-list">
+      
+        <li><a class="post-link" href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
+      
+        <li><a class="post-link" href="/archivers/Android-Seekbar-Style" target="_blank">Android Seekbar style</a></li>
+      
+        <li><a class="post-link" href="/archivers/Whats-Jekyll" target="_blank">Whats Jekyll?</a></li>
+      
+        <li><a class="post-link" href="/archivers/Whats-Bohu" target="_blank">Whats BoHu?</a></li>
+      
+        <li><a class="post-link" href="/archivers/Example-content" target="_blank">Example content</a></li>
+      
+    </ul>
+  
 
   <div class="col-box-title myFont css2dcc4b9955748">标签</div>
   

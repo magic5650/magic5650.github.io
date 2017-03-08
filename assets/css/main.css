@@ -5,6 +5,12 @@ html, body, header, main, footer, h1, p, nav, div, ul, li, a, img, span {
   font-size: 18px;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }
 
+p, ul, li, img {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }
+
 a {
   text-decoration: none !important; }
 
@@ -95,6 +101,7 @@ main {
     .content {
       width: 960px; } }
   .content .content-inner-title {
+    font-size: 18px;
     color: #666;
     font-weight: 700;
     border-bottom: 1px solid #eee;
@@ -112,7 +119,7 @@ main {
       font-weight: bold !important; }
     .content .content-main .post-list li {
       list-style: none;
-      padding: 10px 0;
+      padding: 0 0 10px 0;
       border-top: 1px solid #eee; }
       .content .content-main .post-list li a {
         color: #259; }
@@ -147,7 +154,7 @@ main {
     border-top: 1px solid #eee;
     padding: 20px 0 10px 0; }
   .sidebar li {
-    list-style: circle;
+    list-style: none;
     color: #222;
     margin: 5px 0; }
     .sidebar li a {
@@ -159,6 +166,7 @@ main {
 
 .pagination {
   display: block !important;
+  margin: 0 !important;
   padding-top: 50px;
   border-top: 1px solid #eee; }
   .pagination a {
@@ -252,7 +260,7 @@ main {
 
 .site-tag a {
     display: inline-block;
-    margin: 0 10px 10px;
+    margin: 0 10px 10px 0;
     color: #259;
     padding: 0 10px;
     border-radius: 30px;
@@ -265,13 +273,22 @@ main {
     }
 .site-tag-main {
   padding: 18px 0 8px;
-  border-top: 1px solid #ccc;
-}
+  border-top: 1px solid #ccc; }
 .category-list,.tag-list {
   padding: 10px 0;
-  border-top: 1px solid #eee;
-}
+  border-top: 1px solid #eee; }
+  .category-list li,.tag-list li {
+    list-style: none; }
 
+.social-share .icon-wechat .wechat-qrcode {
+    top: -165px !important;
+    left: -60px !important;
+    width: 150px !important;
+    height: 152px !important; }
+  .social-share .icon-wechat .wechat-qrcode h4 {
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      color: #666 !important; }
 
 .errorWrap {
   background: #eff2f5; }
@@ -437,7 +454,7 @@ div.go-top div.stick {
     border-bottom: 1px solid #eee;
     overflow: hidden;
     padding: 7px 14px;
-    font-size: 14px;
+    font-size: 15px;
     margin: 0; }
   .home-category .post-list {
     padding: 0 14px; }

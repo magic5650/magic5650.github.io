@@ -45,17 +45,23 @@ layout: home
 </div>
 
 <div class="home-category">
-  <h1 class="page-heading">文章分类</h1>
+  <div class="page-heading">
+  	<p style="display: inline;margin:0">文章分类</p>
+    <a style="float:right;margin:0;font-size: 15px;" href="/pages/category.html">更多</a>
+  </div>
 
   <ul class="post-list">
-
+    {% assign number = site.categories.size %}
+    {% if user.payments.size > 4  %}
+		{% assign number = 4 %}
+	{% endif %}
 	{% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 	{% assign category = categories | split:',' | sort %}
-	{% for item in (0..site.categories.size) %}{% unless forloop.last %}
+	{% for item in (0..number) %}{% unless forloop.last %}
 	{% capture word %}{{ category[item] | strip_newlines }}{% endcapture %}
 	<h2 class="category" id="{{ word }}">{{ word | upcase }}</h2>
 	<ul>
-		{% for post in site.categories[word] %}{% if post.title != null %}
+		{% for post in site.categories[word] limit:2 %}{% if post.title != null %}
 		<li>
 		  <span>{{ post.date | date: "%b %d, %Y" }}</span> » <a href="{{ site.baseurl}}{{ post.url }}" target="_blank">{{ post.title }}</a>
 		</li>

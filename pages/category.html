@@ -6,7 +6,7 @@ permalink: /pages/category.html
 <script type="text/javascript">
 $(document).ready(function(){
   $("span.site-tag").click(function(){
-	  var tag_id= $(this).attr("id");
+    var tag_id= $(this).attr("id");
     $("span.site-tag").each(function(){
         if ($(this).attr("id")!=tag_id)
         {
@@ -16,15 +16,15 @@ $(document).ready(function(){
           $(this).addClass("current");
         }
     })
-  	$("ul.post-list").children("div").each(function(){
-  		if ($(this).attr("id")!=tag_id)
-  		{
-  			$(this).hide();
-  		}
-  		else{
-  			$(this).show();
-  		}
-  	})
+    $("ul.post-list").children("div").each(function(){
+      if ($(this).attr("id")!=tag_id)
+      {
+        $(this).hide();
+      }
+      else{
+        $(this).show();
+      }
+    })
     $('html, body').animate({scrollTop:0}, 'fast');
   });
 
@@ -73,9 +73,11 @@ $(document).ready(function(){
   </span>
   {% endfor %}
 </div>
+
 <div>
   <ul class="post-list">
 	{% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+  
 	{% assign category = categories | split:',' | sort %}
 	{% for item in (0..site.categories.size) %}{% unless forloop.last %}
 	{% capture word %}{{ category[item] | strip_newlines }}{% endcapture %}

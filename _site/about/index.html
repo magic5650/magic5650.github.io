@@ -73,14 +73,14 @@
   <!--   <script type="text/javascript">
   window.onload = function() {
     var qrcode = new QRCode(document.getElementById("qrcode"), {
-        text: "http://localhost:4000",
+        text: "",
         width: 120,
         height: 120,
         colorDark : "#000000",
         colorLight : "#ffffff",
         correctLevel : QRCode.CorrectLevel.H
     });
-    qrcode.makeCode("http://localhost:4000/about/");
+    qrcode.makeCode("/about/");
     console.log("qrcode.makeCode");
     var qrcodediv = document.getElementById("qrcode");
     var wechat = document.getElementById("wechat");
@@ -99,7 +99,7 @@
 </script> -->
 <!-- <span id="share">
   <div id="qrcode2" class="hide"></div>
-  <a id="wechat" class="social-share-icon icon-wechat" title="分享到 微信" data-wechat-url="http://localhost:4000/about/" href="javascript:void(0);" tabindex="-1">
+  <a id="wechat" class="social-share-icon icon-wechat" title="分享到 微信" data-wechat-url="/about/" href="javascript:void(0);" tabindex="-1">
     <div class="wechat-qrcode">
       <h4>微信扫一扫</h4>
       <div id="qrcode" class="qrcode"></div>
@@ -109,16 +109,16 @@
     </div>
   </a>
 
-  <a id="weibo" class="social-share-icon icon-weibo" title="分享到 新浪微博" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/about/&amp;title=About | 诗宁 +-+作者: @magic5650&amp;pic=pics=http://localhost:4000/assets/image/avatar.jpg&amp;appkey=2868579043" target="_blank"></a>
+  <a id="weibo" class="social-share-icon icon-weibo" title="分享到 新浪微博" href="http://service.weibo.com/share/share.php?url=/about/&amp;title=About | 诗宁 +-+作者: @magic5650&amp;pic=pics=/assets/image/avatar.jpg&amp;appkey=2868579043" target="_blank"></a>
 
-  <a id="tecent" class="social-share-icon icon-qq" title="分享给 QQ好友" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/about/&amp;title=About | 诗宁&amp;source=magic5650&amp;pics=http://localhost:4000/assets/image/avatar.jpg" target="_blank"></a>
+  <a id="tecent" class="social-share-icon icon-qq" title="分享给 QQ好友" href="http://connect.qq.com/widget/shareqq/index.html?url=/about/&amp;title=About | 诗宁&amp;source=magic5650&amp;pics=/assets/image/avatar.jpg" target="_blank"></a>
 
-  <a id="qzone" class="social-share-icon icon-qzone" title="分享到 QQ空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://localhost:4000/about/&amp;title=About | 诗宁&amp;desc=&amp;summary=&amp;site=magic5650" target="_blank"></a>
+  <a id="qzone" class="social-share-icon icon-qzone" title="分享到 QQ空间" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=/about/&amp;title=About | 诗宁&amp;desc=&amp;summary=&amp;site=magic5650" target="_blank"></a>
 
-  <a id="twitter" class="social-share-icon icon-twitter" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=http://localhost:4000/about/&amp;text=About | 诗宁&amp;via=zyx19936688" target="_blank"></a>
+  <a id="twitter" class="social-share-icon icon-twitter" title="Share to Twitter" href="https://twitter.com/intent/tweet?url=/about/&amp;text=About | 诗宁&amp;via=zyx19936688" target="_blank"></a>
 </span> -->
 
-<div class="social-share" data-wechat-qrcode-title="微信扫一扫" data-wechat-qrcode-helper="微信扫一扫,右上角分享" data-sites="wechat,qzone,qq,weibo,douban"></div>
+<!-- <div class="social-share" data-wechat-qrcode-title="微信扫一扫" data-wechat-qrcode-helper="微信扫一扫,右上角分享" data-sites="weibo,wechat,qzone,qq,douban"></div> -->
 <!-- https://github.com/overtrue/share.js-->
 
 
@@ -160,21 +160,22 @@
     
   </p>
 
-  <div class="col-box-title myFont css2dcc4b9955748">最新文章</div>
-  <ul class="post-list">
-<!--     <li>Theme By <a href="http://www.jianshu.com/u/8694930d2e61">Magic Fan</a></li> -->
-    
-      <li><a class="post-link" href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
-    
-      <li><a class="post-link" href="/archivers/Android-Seekbar-Style" target="_blank">Android Seekbar style</a></li>
-    
-      <li><a class="post-link" href="/archivers/Whats-Jekyll" target="_blank">Whats Jekyll?</a></li>
-    
-      <li><a class="post-link" href="/archivers/Whats-Bohu" target="_blank">Whats BoHu?</a></li>
-    
-      <li><a class="post-link" href="/archivers/Example-content" target="_blank">Example content</a></li>
-    
-  </ul>
+  
+    <div class="col-box-title myFont css2dcc4b9955748">最新文章</div>
+    <ul class="post-list">
+      
+        <li><a class="post-link" href="/archivers/Android-Seekbar-Control" target="_blank">Android Seekbar Control</a></li>
+      
+        <li><a class="post-link" href="/archivers/Android-Seekbar-Style" target="_blank">Android Seekbar style</a></li>
+      
+        <li><a class="post-link" href="/archivers/Whats-Jekyll" target="_blank">Whats Jekyll?</a></li>
+      
+        <li><a class="post-link" href="/archivers/Whats-Bohu" target="_blank">Whats BoHu?</a></li>
+      
+        <li><a class="post-link" href="/archivers/Example-content" target="_blank">Example content</a></li>
+      
+    </ul>
+  
 
   <div class="col-box-title myFont css2dcc4b9955748">标签</div>
   
