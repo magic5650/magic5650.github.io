@@ -109,7 +109,8 @@ main {
     margin: 0; }
   @media screen and (min-width: 800px) {
     .content .content-inner {
-      margin-right: 328px; } }
+      margin-right: 318px;
+      padding-left:8px; } }
   .content .content-main {
     border-top: 1px solid #ccc; }
     .content .content-main .post-link {
