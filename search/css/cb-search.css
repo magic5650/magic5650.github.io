@@ -23,7 +23,7 @@
                 word-break:normal;
                  overflow:hidden;
              }
-        
+            
             .search-content {
                 width: 367px;
                 font-size: 22px;
@@ -53,7 +53,7 @@
 			}
 
             .search-content {
-                width: 250px;
+                width: 200px;
                 font-size: 22px;
                 background-color: #eee;
                 color: black;
