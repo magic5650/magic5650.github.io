@@ -8,8 +8,12 @@ html, body, header, main, footer, h1, p, nav, div, ul, li, a, img, span {
 p, ul, li, img {
   margin: 0;
   padding: 0;
-  font-size: 15px;
-  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }
+  font-family: Arial, "Hiragino Sans GB", 冬青黑, "Microsoft YaHei", 微软雅黑, SimSun, 宋体, Helvetica, Tahoma, "Arial sans-serif";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased; }
 
 a {
   text-decoration: none !important; }
@@ -26,6 +30,10 @@ a {
   clear: both; }
 
 #header {
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
   width: 100%;
   height: auto;
   background: #0767c8;
@@ -41,7 +49,8 @@ a {
     position: relative; }
     @media screen and (min-width: 960px) {
       #header .headerWrap {
-        width: 960px; } }
+        width: 960px;
+        padding: 0 8px; } }
     #header .headerWrap .title, #header .headerWrap nav {
       display: inline-block; }
   #header .title {
@@ -110,7 +119,7 @@ a {
 
 main {
   margin: 0 auto;
-  padding: 25px 0 50px 0; }
+  padding: 60px 0 50px 0; }
   @media screen and (min-width: 960px) {
     main {
       width: 960px; } }
@@ -152,6 +161,12 @@ main {
       .content .content-main .post-list li .post-excerpt {
         color: #222;
         font-size: 13px; }
+#markdown-toc { 
+    padding: 0 0 0 16px; }
+  #markdown-toc ul {
+    padding-left: 2em;
+    margin-top: 0;
+    margin-bottom: 16px; }
 
 .sidebar {
   width: 280px;
@@ -237,7 +252,7 @@ main {
 
 @media screen and (max-width: 800px) {
   .headerWrap, main, .footer-inner {
-    width: 98%; }
+    width: 95%; }
 
   .content {
     width: 100%; }
@@ -347,7 +362,6 @@ div.error {
       div.error .contentmain .link a {
         color: #105cb6; }
 
-/* 杩斿洖椤堕儴鎸夐挳 */
 div.go-top {
   display: none;
   opacity: 1;
@@ -356,8 +370,8 @@ div.go-top {
   bottom: 113px;
   left: 50%;
   margin-left: 230px;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   background-color: #ddd;
   border-radius: 3px;
   cursor: pointer; }
@@ -371,18 +385,18 @@ div.go-top:hover {
 
 div.go-top div.arrow {
   position: absolute;
-  left: 10px;
-  top: -1px;
+  left: 6px;
+  top: -8px;
   width: 0;
   height: 0;
-  border: 9px solid transparent;
+  border: 14px solid transparent;
   border-bottom-color: #aaa; }
 
 div.go-top div.stick {
   position: absolute;
-  left: 15px;
-  top: 15px;
-  width: 8px;
+  left: 14px;
+  top: 19px;
+  width: 12px;
   height: 14px;
   display: block;
   background-color: #aaa;
@@ -390,7 +404,10 @@ div.go-top div.stick {
   -moz-border-radius: 1px;
   border-radius: 1px; }
 
-/* 棣栭〉 */
+@media screen and (max-width: 800px) {
+  div.go-top {
+    margin-left: 130px; } }
+
 .profile {
   min-width: 280px;
   border: 1px solid #ddd;
