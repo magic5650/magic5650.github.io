@@ -406,7 +406,8 @@ div.go-top div.stick {
 
 @media screen and (max-width: 800px) {
   div.go-top {
-    margin-left: 130px; } }
+    margin-left: 120px;
+    bottom: 50px; } }
 
 .profile {
   min-width: 280px;
