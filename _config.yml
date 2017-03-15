@@ -31,9 +31,11 @@ disqus_shortname: magic5650
 permalink: /archivers/:title
 gems:
  # - jekyll-archives
+ - jekyll-sitemap
  - jekyll-paginate
  - jekyll-gist
  - jemoji
+ - rouge
 
 repository: magic5650/magic5650.github.io
 gist:
