@@ -3,7 +3,7 @@ layout: post
 title: linux监听端口local address释义
 author: magic
 date:   2017-03-15
-categories: linux
+categories: Linux
 tags: linux
 permalink: /archivers/linux-local-address
 ---
