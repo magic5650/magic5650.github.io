@@ -58,6 +58,8 @@ a {
     font-weight: normal;
     color: #fff;
     float: left; }
+  #header #Moblienav {
+  display: none; }  
   #header nav {
     vertical-align: top;
     margin-left: 18px;
@@ -95,11 +97,17 @@ a {
       line-height: 45px;
       vertical-align: middle; }
 
+
 #search {
   float: left;
   height: 45px;
   line-height: 45px;
   margin-left: 12px; }
+  @media screen and (max-width: 960px) {
+    #search {
+    position: absolute;
+    left: 65px;
+    right: 73px; } }
   #search-content {
     display: inline-block !important; 
     color: #49525c;
@@ -122,7 +130,7 @@ main {
     main {
       width: 960px; } }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 960px) {
   .headerWrap, main, .footer-inner {
     width: 95%; }
 
@@ -136,7 +144,14 @@ main {
     display: none; }
 
   .sidebar {
-    display: none; } }
+    display: none; }
+
+  #PCnav {
+    display: none !important; }
+  
+  #Moblienav {
+    display: inline-block !important;
+    float: right !important; } }
 
 .content {
   float: left; }
@@ -398,7 +413,7 @@ div.go-top {
     -webkit-border-radius: 1px;
     -moz-border-radius: 1px;
     border-radius: 1px; }
-  @media screen and (max-width: 800px){
+  @media screen and (max-width: 960px){
     div.go-top {
     margin-left: 120px;
     bottom: 50px; } }

@@ -17,17 +17,6 @@
     <li><a href="{{ "/about" | prepend: site.url }}" class="myFont css2dcc4b9955748">关于</a></li>
   </ul>
 </nav>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        if ($(window).width() > 768) {
-          console.log("PC")
-          $("#Moblienav").hide()
-        } else {
-          $("#PCnav").hide()
-          console.log("moblie")
-        }
-    })
-    </script>
     <link rel="stylesheet" href="{{ "/search/css/cb-search.css" | prepend: site.url }}">
     <script src="{{ "/search/js/bootstrap3-typeahead.min.js" | prepend: site.url }}"></script>
     <script src="{{ "/search/js/cb-search.js" | prepend: site.url }}"></script>

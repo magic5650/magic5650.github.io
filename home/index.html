@@ -52,7 +52,7 @@ layout: home
 
   <ul class="post-list">
     {% assign number = site.categories.size %}
-    {% if user.payments.size > 4  %}
+    {% if number > 4  %}
 		{% assign number = 4 %}
 	{% endif %}
 	{% capture categories %}{% for category in site.categories %}{{ category | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
