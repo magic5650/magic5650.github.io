@@ -9,3 +9,27 @@ public: true
 <p>This is my first Jekyll-Theme！</p>
 <p>It's a style of ZhiHu. Zhihu is one of the most famous sites in China which to learn each other's knowledge from all over the world. Color and size is strictly in accordance with the ZhiHu. More content will be added in the follow-up!</p>
 <p>In the ZhiHu, you can learn knowledge from all over the world. In the BoHu, you can share knowledge to all over the world!</p>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$.soap({
+		url: 'https://mail.yy.com/apiws/services/API/',
+		method: 'userLogin',
+		type: "POST",
+		data: {
+			user_at_domain: 'fanweirui@yy.com',
+		},
+		success: function (soapResponse) {
+			// do stuff with soapResponse
+			// if you want to have the response as JSON use soapResponse.toJSON();
+			// or soapResponse.toString() to get XML string
+			// or soapResponse.toXML() to get XML DOM
+			console.log(soapResponse.toString());
+		},
+		error: function (SOAPResponse) {
+			// show error
+			console.log("error");
+		}
+	});
+});
+</script>
