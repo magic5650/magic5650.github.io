@@ -12,7 +12,6 @@ permalink: /archivers/tomcat-build
 
 ## tomcat编译打包
 
-[toc]
 ### 编译环境
 
     ubuntu 9  Linux ubuntu 2.6.28-11-server 
