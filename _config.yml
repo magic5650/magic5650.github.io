@@ -30,7 +30,7 @@ disqus_shortname: magic5650
 # excerpt_separator: <!–excerpt–> # 摘要分割字符串
 permalink: /archivers/:title
 gems:
- # - jekyll-archives
+ - jekyll-archives
  - jekyll-sitemap
  - jekyll-paginate
  - jekyll-gist
@@ -53,12 +53,12 @@ kramdown:
   hard_wrap: false
   toc_levels: 1..3
 
-# jekyll-archives:
-  # enabled: all
-  # layout: 'archive'
-  # permalinks:
-  #   year: '/:year/'
-  #   month: '/:year/:month/'
-  #   day: '/:year/:month/:day/'
-  #   tag: '/tag/:name/'
-  #   category: '/category/:name/'
+jekyll-archives:
+  enabled: all
+  layout: 'archive'
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    day: '/:year/:month/:day/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'

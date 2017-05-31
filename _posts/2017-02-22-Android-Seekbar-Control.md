@@ -20,7 +20,7 @@ permalink: /archivers/Android-Seekbar-Control
 
 这里我们使用Timer新建一个Timertask，间隔执行，然后在暂停或者结束后停止发送
 
-{% highlight java %}
+``` java
 public void SeedPlayMsg(){
         if(timer == null) {
             Log.d(TAG, "创建timer对象");
@@ -58,7 +58,7 @@ public void SeedPlayMsg(){
             //开始计时任务后的5毫秒后第一次执行run方法，以后每500毫秒执行一次
         }, 200, 500);
     }
-{% endhighlight %}
+```
 
 *这里有个很重要的细节，就是发送播放结束的消息，一般我们认为当发送的位置等于媒体的长度时，我们就认为是结束了，可事实上不是这样的，因为MediaPlayer对象的getCurrentPosition()方法在媒体播放结束后获取到的值也与获取时常的方法getDuration()得到的值不一致，总是要小，而且还不固定。*
 **所以为了精确播放是否完成，我们还是由原生接口监听去判断播放是否完成**
