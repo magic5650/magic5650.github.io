@@ -27,8 +27,8 @@ disqus_shortname: magic5650
 # get one: http://duoshuo.com/create-site/
 
 # blog settings
-excerpt_separator: <!–excerpt–> # 摘要分割字符串
-# excerpt_separator: "\n\n"
+# excerpt_separator: <!–excerpt–> # 摘要分割字符串
+excerpt_separator: "\n\n"
 permalink: /archivers/:title
 gems:
  - jekyll-archives

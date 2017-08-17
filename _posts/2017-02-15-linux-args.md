@@ -15,7 +15,7 @@ permalink: /archivers/linux-top
 
 $$
 Shell本身的PID（ProcessID）
-<!–excerpt–> 
+ 
 $！
 Shell最后运行的后台Process的PID 
 

@@ -21,7 +21,7 @@ permalink: /archivers/tomcat-build
     目录:/usr/loca/src
 
 ###  下载包系统上的最新的tomcat版本
-<!–excerpt–> 
+ 
 ### 1.下载、安装apr
 ```
 cd /usr/loca/src

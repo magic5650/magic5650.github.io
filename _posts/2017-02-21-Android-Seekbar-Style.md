@@ -17,7 +17,7 @@ permalink: /archivers/Android-Seekbar-Style
 **难点：用户点击或者移动是SeekBar滑块是改变滑块的图案**
 ### 1. 先画两种不同状态的滑块Thumb
 平时状态：一个直径为10dp大小的白色的圆
-<!–excerpt–>
+
 slider_thumb_normal.xml
 
 ```

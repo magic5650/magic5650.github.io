@@ -16,7 +16,7 @@ permalink: /archivers/linux-tcp-optimization
 
 指定了可以分配的文件句柄的最大数目（可以使用 /proc/sys/fs/file-nr 文件查看到当前已经使用的文件句柄和总句柄数。）
 这个数值应大于hard limit
-<!–excerpt–> 
+ 
 > /etc/security/limits.conf
 
 * soft nofile 262140 #代表最大文件打开数 
