@@ -13,7 +13,7 @@ permalink: /archivers/linux-shell-parallel
 
 **背景：从服务器上抽取出来的IP需要调用接口查询IP地址所在地，直接for循环使用&后台并行查询接口时，有可能受到接口的限制，会导致获取失败；
 故采用批量查询的方法，一次查询n个，查询完后在执行下一次查询**
-
+<!–excerpt–> 
 ```
 #!/bin/bash
 

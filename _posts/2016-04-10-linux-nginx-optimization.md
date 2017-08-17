@@ -13,7 +13,7 @@ permalink: /archivers/linux-nginx-optimization
 ## nginx、fastcgi优化
 
 从nginx的内部来看，一个HTTP Request的处理过程涉及到以下几个阶段。
-
+<!–excerpt–> 
 >1. 初始化HTTP Request（读取来自客户端的数据，生成HTTP Request对象，该对象含有该请求所有的信息）。
 >2. 处理请求头。
 >3. 处理请求体。
