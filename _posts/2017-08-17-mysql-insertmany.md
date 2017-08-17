@@ -3,8 +3,8 @@ layout: post
 title: python pymysql批量插入数据
 author: magic
 date:   2017-03-25
-categories: Mysql,Python
-tags: mysql,python
+categories: Python
+tags: mysql python
 permalink: /archivers/mysql-insertmany
 ---
 * 目录
