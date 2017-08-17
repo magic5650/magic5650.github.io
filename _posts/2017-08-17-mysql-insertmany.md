@@ -14,6 +14,8 @@ permalink: /archivers/mysql-insertmany
 从mysqldump导出来的数据，都以一条sql语句插入几千条数据，导入执行时，执行一条速度均在零点几秒
 速度快的飞起。
 
+
+
 受此启发研究了一下使用 pymysql 往mysql快速插入大量数据的方法。
 
 原理很简单，就是构造一条插入几千条数据的sql语句，然后执行。
