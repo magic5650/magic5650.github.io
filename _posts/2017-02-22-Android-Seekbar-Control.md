@@ -14,7 +14,6 @@ permalink: /archivers/Android-Seekbar-Control
 1. 根据后台播放状态调整SeekBar的滑块位置;
 2. 反馈用户的滑动滑块事件;
 
-<!–excerpt–>
 
 分析:
 一般我们的视频或者音乐播放是由后台Service播放的，而SeekBar是在前台Activity或者Fragment里，所以根据播放状态我们调整SeekBar滑块可以让Service主动发送数据给前台，而反馈用户滑块事件，直接在前台获得Service实例，然后操作相关控制媒体播放的方法即可。
