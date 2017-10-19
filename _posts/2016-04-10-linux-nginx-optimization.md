@@ -19,7 +19,7 @@ permalink: /archivers/linux-nginx-optimization
 >3. 处理请求体。
 >4. 如果有的话，调用与此请求（URL或者Location）关联的handler。
 >5. 依次调用各phase handler进行处理。
-
+<!--more-->
 在这里，我们需要了解一下phase handler这个概念。phase字面的意思，就是阶段。所以phase handlers也就好理解了，就是包含若干个处理阶段的一些handler。
 
 在每一个阶段，包含有若干个handler，再处理到某个阶段的时候，依次调用该阶段的handler对HTTP Request进行处理。

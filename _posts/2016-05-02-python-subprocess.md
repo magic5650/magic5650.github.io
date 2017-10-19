@@ -15,7 +15,7 @@ permalink: /archivers/python-subprocess
 > subprocess意在替代其他几个老的模块或者函数，比如：os.system os.spawn* os.popen* popen2.* commands.*
 
 subprocess最简单的用法就是调用shell命令了,另外也可以调用程序,并且可以通过stdout,stdin和stderr进行交互
- 
+<!--more-->
 ### subprocess的主类
 
 ```

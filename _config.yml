@@ -28,7 +28,7 @@ disqus_shortname: magic5650
 
 # blog settings
 # excerpt_separator: <!–excerpt–> # 摘要分割字符串
-excerpt_separator: "\n\n"
+excerpt_separator: <!--more-->
 permalink: /archivers/:title
 gems:
  - jekyll-archives

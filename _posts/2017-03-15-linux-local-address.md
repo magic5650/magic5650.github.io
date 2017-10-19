@@ -8,7 +8,7 @@ tags: linux
 permalink: /archivers/linux-local-address
 ---
 As an example, apache has it's Listen option which tells it which address and port to listen on. Depending on how this is set, apache will listen on any IP address, a specific address:-
-
+<!--more-->
 作为一个例子，apache有它的Listen选项，这些选项会告知哪个地址和端口要监听。根据设置，apache将可以监听任何IP地址，有如下监听地址配置：
 
 ```shell

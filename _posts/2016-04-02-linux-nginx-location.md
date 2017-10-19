@@ -11,7 +11,7 @@ permalink: /archivers/linux-nginx-location
 {:toc}
 
 ## nginx location配置分析
- 
+<!--more-->
 ```
 location  = / {
 

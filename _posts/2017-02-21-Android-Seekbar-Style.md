@@ -12,6 +12,7 @@ permalink: /archivers/Android-Seekbar-Style
 ## Android仿酷狗音乐SeekBar——样式篇
 需求：仿酷狗音乐SeekBar
 直接上图，上代码
+<!--more-->
 ![1903148-676fcbf2e5048392.png](http://upload-images.jianshu.io/upload_images/1903148-0414a84bd91e4ddc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![1903148-d3e5ab81fa2acd42.png](http://upload-images.jianshu.io/upload_images/1903148-d7a9c2b37322d59d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 **难点：用户点击或者移动是SeekBar滑块是改变滑块的图案**
