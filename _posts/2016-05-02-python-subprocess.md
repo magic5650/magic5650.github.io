@@ -4,7 +4,7 @@ title: python执行shell的subprocess模块
 author: magic
 date:   2016-05-02
 categories: Python
-tags: Python Shell
+tags: python shell
 permalink: /archivers/python-subprocess
 ---
 * 目录

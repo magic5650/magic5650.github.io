@@ -7,9 +7,9 @@ description: magic5650的个人博客网站。
 # author information
 email: magic5650@126.com
 author: Magic #yourname #magic范
-place: Guangzhou #杭州
-domain: yy.com #互联网
-company: 欢聚时代 #Jeeyoo
+place: Guangzhou #广州
+domain: mobvista.com #互联网
+company: Mobvista. #Mobvista.
 position: Service Operations #业务运维
 school: bjtu.edu.cn #北京交通大学
 major: Computer Science&Technology #计算机科学与技术
@@ -27,7 +27,6 @@ disqus_shortname: magic5650
 # get one: http://duoshuo.com/create-site/
 
 # blog settings
-# excerpt_separator: <!–excerpt–> # 摘要分割字符串
 excerpt_separator: <!--more-->
 permalink: /archivers/:title
 gems:
