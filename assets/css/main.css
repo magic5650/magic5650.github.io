@@ -19,6 +19,44 @@ p, ul, li, img {
 a {
   text-decoration: none !important; }
 
+table {
+  margin: 20px 0;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  table-layout: fixed;
+  word-wrap: break-all;
+}
+
+tr:nth-child(odd){
+  background: #f9f9f9;
+}
+
+th, td {
+  border-bottom: 3px solid #ddd;
+  border-right: 1px solid #eee;
+  padding: 8px !important;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: normal;
+}
+
+td {
+  border-bottom-width: 1px;
+}
+
+th {
+    padding-bottom: 10px !important;
+    font-weight: 700;
+    background: #ffffff;
+}
+
+tr:hover{
+  background: transparent;
+}
+
 .clearfix {
   *zoom: 1; }
   .clearfix:before, .clearfix:after {
