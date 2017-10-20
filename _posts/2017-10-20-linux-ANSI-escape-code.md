@@ -18,7 +18,8 @@ ANSI控制码均以 Esc[ 作为控制码的开始标志，其中，Esc 的ansi�
 详见 [维基百科](https://en.wikipedia.org/wiki/ANSI_escape_code)
 
 在linux终端使用echo输出带颜色的字符，需要使用ANSI控制码。ANSI控制码开始的标志都为ESC[，在这里ESC对应ASCII码表的033(八进制)，所以echo命令使用-e选项启用转义，用"\033"来输入ESC。如下命令echo的参数中：
-<!-- more -->
+
+<!--more-->
 
 ```
 echo -e "\033[42;36;5msomething here\033[0m"

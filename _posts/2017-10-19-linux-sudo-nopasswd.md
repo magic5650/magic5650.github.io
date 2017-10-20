@@ -17,7 +17,7 @@ permalink: /archivers/linux-sudo-nopasswd
 系统执行sudo命令的时候有时需要输入密码，如果是写在脚本里面就比较麻烦了
 一般我们会想到使用expect，但其实还是太麻烦了
 
-<!-- more -->
+<!--more-->
 ### 使用-S选项
 ```
 man sudo
