@@ -18,7 +18,7 @@ permalink: /archivers/docker-jenkins-install
 
 主机环境：
 AWS免费主机，系统Amazon Linux AMI release 2017.09，相当于centos7
-
+<!--more-->
 ### 安装docker
 
 > \# yum安装  
