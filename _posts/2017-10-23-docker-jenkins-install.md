@@ -12,8 +12,11 @@ permalink: /archivers/docker-jenkins-install
 
 ## 使用docker部署jenkins
 [官方部署文档](https://hub.docker.com/_/jenkins/)
+
 [jenkins官方的docker镜像](https://hub.docker.com/_/jenkins/)
+
 一个带maven的镜像
+
 [java8-jenkins-maven-git-vim](https://hub.docker.com/r/lw96/java8-jenkins-maven-git-vim/)
 
 主机环境：
@@ -21,33 +24,33 @@ AWS免费主机，系统Amazon Linux AMI release 2017.09，相当于centos7
 
 ### 安装docker
 
-```
-# yum安装
-yum install docker -y
-# 启动docker服务
-service docker start
-# 查看docker进程
-ps -ef|grep docker
-```
+
+> # yum安装
+> yum install docker -y
+> # 启动docker服务
+> service docker start
+> # 查看docker进程
+> ps -ef|grep docker
+
 
 ### 获取jenkins镜像
 
-```
-# 拉取镜像
-docker pull jenkins
-# 查看镜像
-docker images
-```
+
+> # 拉取镜像
+> docker pull jenkins
+> # 查看镜像
+> docker images
+
 
 ### 启动jenkins镜像
-```
-# 创建外挂配置目录
-mkdir /var/jenkins_home
-# 赋权
-chown 1000 /var/jenkins_home
-# 后台启动
-docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins
-```
+
+> # 创建外挂配置目录
+> mkdir /var/jenkins_home
+> # 赋权
+> chown 1000 /var/jenkins_home
+
+> # 后台启动
+> docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins
 
 - 这句命令的意思是：在后台运行一个基于jenkins镜像的容器, 容器的名字叫做 jenkins,把容器的8080,50000端口映射为主机端口8080,50000端口，并且把服务器上的/var/jenkins_home目录挂在到docker容器上的/var/jenkins_home目录
 - -d 后台运行docker容器；如果不加-d则，容器运行会占用此终端，如果终端关闭，则容器也相应关闭，jenkins就无法访问了。加上-d,容器会在后台运行。
