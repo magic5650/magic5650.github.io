@@ -5,7 +5,7 @@ author: magic
 date:   2016-12-25
 categories: Linux
 tags: linux
-permalink: /archivers/linux-top
+permalink: /archivers/linux-lsdfdu
 ---
 * 目录
 {:toc}

@@ -5,7 +5,7 @@ author: magic
 date:   2017-02-15
 categories: Linux
 tags: linux
-permalink: /archivers/linux-top
+permalink: /archivers/linux-args
 ---
 * 目录
 {:toc}
