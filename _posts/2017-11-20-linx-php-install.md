@@ -145,9 +145,9 @@ user = www
 group = www
 pm = dynamic
 pm.max_children = 500
-pm.start_servers = 80
-pm.min_spare_servers = 80
-pm.max_spare_servers = 100
+pm.start_servers = 2
+pm.min_spare_servers = 2
+pm.max_spare_servers = 10
 
 request_terminate_timeout = 6000
 #request_terminate_timeout = 3000
@@ -218,6 +218,28 @@ extension=redis.so
 extension=memcache.so
 extension=mongo.so
 ```
+
+### 配置 php-pfm 服务
+```
+cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm  
+chmod +x /etc/init.d/php-fpm
+chkconfig --add php-fpm
+chkconfig php-fpm on
+```
+启动 php-fpm：  
+service php-fpm start  
+然后在配置 Nginx 后端支持的时候：  
+```
+location ~ \.php$ {
+    try_files $uri =404;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_param PATH_INFO $fastcgi_path_info;
+    include fastcgi_params;
+    fastcgi_pass unix:/tmp/php-cgi.sock;
+}
+```
+
 ## 其他
 查看编译配置  
 /usr/local/php/bin/php -i|grep configure  
