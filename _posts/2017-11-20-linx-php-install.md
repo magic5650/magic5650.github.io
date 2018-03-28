@@ -41,46 +41,67 @@ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.14.tar.gz
 tar zxvf libiconv-1.14.tar.gz
 cd libiconv-1.14
 ./configure --prefix=/usr/local/libiconv
-make && make installl
+make && make install
 ```
-## 安装php5.6
+## 安装php7.2
 ```
-wget http://php.net/distributions/php-5.6.32.tar.gz
-tar zxf php-5.6.32.tar.gz
-cd php-5.6.32
+wget http://am1.php.net/distributions/php-7.2.3.tar.gz
+tar zxf php-7.2.3.tar.gz
+cd php-7.2.3
 
 ./configure \
 --prefix=/usr/local/php \
 --with-config-file-path=/usr/local/php/etc \
 --with-iconv-dir=/usr/local/libiconv \
---with-readline \
---with-freetype-dir \
---with-jpeg-dir \
---with-png-dir \
---with-libxml-dir \
---with-zlib-dir \
---with-gd \
---with-curl \
---with-mcrypt \
---with-gmp \
 --with-bz2 \
---with-openssl \
---with-pdo-mysql=mysqlnd \
---with-mysql=mysqlnd \
+--with-curl \
+--with-freetype-dir \
+--with-gd \
+--with-gettext \
+--with-gmp \
+--with-jpeg-dir \
+--with-libmbfl \
+--with-libxml-dir=/usr/ \
+--with-mhash \
 --with-mysqli=mysqlnd \
 --with-mysql-sock \
---enable-zip \
+--with-onig \
+--with-openssl \
+--with-openssl-dir \
+--with-pcre-dir \
+--with-pcre-jit \
+--with-pcre-regex \
+--with-pdo-mysql=mysqlnd \
+--with-pdo-sqlite \
+--with-pear \
+--with-png-dir \
+--with-readline \
+--with-sqlite3 \
+--with-xmlrpc \
+--with-xsl \
+--with-zlib \
+--with-zlib-dir \
 --enable-bcmath \
---enable-shmop \
---enable-sysvsem \
---enable-mbstring \
---enable-static \
---enable-maintainer-zts \
---enable-sockets \
---enable-soap \
---enable-opcache \
+--enable-calendar \
+--enable-exif \
 --enable-fpm \
+--enable-ftp \
+--enable-gd-jis-conv \
+--enable-maintainer-zts \
+--enable-mbstring \
+--enable-opcache \
 --enable-pcntl \
+--enable-shared  \
+--enable-shmop \
+--enable-sigchild \
+--enable-soap \
+--enable-static \
+--enable-sockets  \
+--enable-sysvmsg \
+--enable-sysvsem \
+--enable-sysvshm \
+--enable-wddx \
+--enable-zip \
 --disable-rpath \
 --disable-ipv6
 
@@ -88,17 +109,19 @@ make && make install
 ```
 安装完后输出如下，这里面提供了很多信息
 ```
-Installing shared extensions:     /usr/local/php/lib/php/extensions/no-debug-zts-20131226/
+Installing shared extensions:     /usr/local/php/lib/php/extensions/no-debug-zts-20170718/
 Installing PHP CLI binary:        /usr/local/php/bin/
 Installing PHP CLI man page:      /usr/local/php/php/man/man1/
 Installing PHP FPM binary:        /usr/local/php/sbin/
-Installing PHP FPM config:        /usr/local/php/etc/
+Installing PHP FPM defconfig:     /usr/local/php/etc/
 Installing PHP FPM man page:      /usr/local/php/php/man/man8/
 Installing PHP FPM status page:   /usr/local/php/php/php/fpm/
+Installing phpdbg binary:         /usr/local/php/bin/
+Installing phpdbg man page:       /usr/local/php/php/man/man1/
 Installing PHP CGI binary:        /usr/local/php/bin/
 Installing PHP CGI man page:      /usr/local/php/php/man/man1/
 Installing build environment:     /usr/local/php/lib/php/build/
-Installing header files:           /usr/local/php/include/php/
+Installing header files:          /usr/local/php/include/php/
 Installing helper programs:       /usr/local/php/bin/
   program: phpize
   program: php-config
@@ -113,7 +136,7 @@ Installing PEAR environment:      /usr/local/php/lib/php/
 [PEAR] PEAR           - installed: 1.10.5
 Wrote PEAR system config file at: /usr/local/php/etc/pear.conf
 You may want to add: /usr/local/php/lib/php to your php.ini include_path
-/root/php-5.6.32/build/shtool install -c ext/phar/phar.phar /usr/local/php/bin
+/root/php-7.2.3/build/shtool install -c ext/phar/phar.phar /usr/local/php/bin
 ln -s -f phar.phar /usr/local/php/bin/phar
 Installing PDO headers:           /usr/local/php/include/php/ext/pdo/
 ```
@@ -144,10 +167,10 @@ listen.mode = 0666
 user = www
 group = www
 pm = dynamic
-pm.max_children = 500
-pm.start_servers = 2
-pm.min_spare_servers = 2
-pm.max_spare_servers = 10
+pm.max_children = 100
+pm.start_servers = 20
+pm.min_spare_servers = 20
+pm.max_spare_servers = 30
 
 request_terminate_timeout = 6000
 #request_terminate_timeout = 3000
@@ -200,11 +223,40 @@ tar -xf mongo-1.6.16.tgz && cd mongo-1.6.16
 ./configure --with-php-config=/usr/local/php/bin/php-config
 make && make install
 ```
+*mongo.so拓展php7不支持，得使用mongodb.so拓展*
+
+### mongodb扩展mongodb.so
+```
+wget http://pecl.php.net/get/mongodb-1.4.2.tgz
+tar -xf mongodb-1.4.2.tgz && cd mongodb-1.4.2
+/usr/local/php/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make && make install
+```
 
 ### memcache扩展memcache.so
 ```
-wget https://pecl.php.net/get/memcache-3.0.8.tgz
-tar zxf memcache-3.0.8.tgz && cd memcache-3.0.8
+yum install libmemcached libmemcached-devel
+git clone https://github.com/php-memcached-dev/php-memcached
+cd php-memcached
+/usr/local/php/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make && make install
+```
+
+### pgsql扩展pgsql.so
+```
+yum -y install postgresql-devel
+cd ext/pgsql/
+/usr/local/php/bin/phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make && make install
+```
+
+### pdo_pgsql扩展pdo_pgsql.so
+```
+yum -y install postgresql-devel
+cd ext/pdo_pgsql/
 /usr/local/php/bin/phpize
 ./configure --with-php-config=/usr/local/php/bin/php-config
 make && make install
@@ -214,14 +266,27 @@ make && make install
 vi /usr/local/php/php/php.ini  
 添加
 ```
+[opcache]
+zend_extension="/usr/local/php/lib/php/extensions/no-debug-zts-20170718/opcache.so"
+opcache.memory_consumption=128
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=4000
+opcache.revalidate_freq=120
+opcache.fast_shutdown=1
+opcache.enable_cli=1
+opcache.validate_timestamps=0
+
+extension_dir = "/usr/local/php/lib/php/extensions/no-debug-zts-20170718/"
 extension=redis.so
-extension=memcache.so
-extension=mongo.so
+extension=memcached.so
+extension=mongodb.so
+extension=pgsql.so
+extension=pdo_pgsql.so
 ```
 
 ### 配置 php-pfm 服务
 ```
-cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm  
+cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 chmod +x /etc/init.d/php-fpm
 chkconfig --add php-fpm
 chkconfig php-fpm on
@@ -259,3 +324,6 @@ location ~ \.php$ {
 [Linux下PHP安装Redis扩展和mongodb扩展](http://cpper.info/2016/06/03/Install-Redis-MongoDB-Plugin-of-PHP.html)  
 [php扩展包官网](https://pecl.php.net/packages.php)  
 [centos7下编译安装libiconv-1.14 error: ‘gets’ undeclared here (not in a function)](http://www.rootop.org/pages/3532.html)  
+[CentOs7 安装php7和postgresql9.6安装及php pgsql扩展模块](https://www.datayang.com/article/12)  
+[error: Please reinstall the libzip distribution](http://www.cnblogs.com/dongbo/p/7863115.html)  
+[PHP7 下安装 memcache 和 memcached 扩展](http://www.lnmp.cn/install-memcache-and-memcached-extends-under-php7.html)  
