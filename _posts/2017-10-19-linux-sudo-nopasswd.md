@@ -85,3 +85,15 @@ Defaults:magic     !authenticate
 来自[wiki.archlinux.org](https://wiki.archlinux.org/index.php/sudo#Example_entries)
 
 **这边AWS上的EC2默认的用户ec2-user没有使用上述任何的手段，就可以使用sudo并且不用密码，很是不解。**
+
+### 扩展配置/etc/sudoers.d
+事实上，AWS上面EC2默认的用户ec2-user有关sudo的配置是放在/etc/sudoers.d目录下面的
+
+cat cloud-init
+```
+ec2-user ALL = NOPASSWD: ALL
+
+# User rules for ec2-user
+ec2-user ALL=(ALL) NOPASSWD:ALL
+```
+
