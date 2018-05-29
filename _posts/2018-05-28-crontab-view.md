@@ -14,7 +14,7 @@ permalink: /archivers/crontab-view
 我们有些服务需要用root跑一些定时任务，但开发使用的服务器用户是普通用户，登上去是没有权限看到root的任务的
 
 他们希望使用一个简单的命名就能看到root用户的定时任务，比如 ct
-
+<!--more-->
 ## 方法
 linux管理员都知道crontab配置也是基于文件和内存管理的
 

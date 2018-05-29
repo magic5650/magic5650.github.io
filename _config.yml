@@ -29,7 +29,7 @@ disqus_shortname: magic5650
 # blog settings
 excerpt_separator: <!--more-->
 permalink: /archivers/:title
-gems:
+plugins:
  - jekyll-archives
  - jekyll-sitemap
  - jekyll-paginate
