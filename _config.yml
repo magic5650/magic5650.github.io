@@ -62,3 +62,5 @@ jekyll-archives:
     day: '/:year/:month/:day/'
     tag: '/tag/:name/'
     category: '/category/:name/'
+
+theme: jekyll-theme-dinky
